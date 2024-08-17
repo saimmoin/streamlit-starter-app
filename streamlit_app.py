@@ -10,7 +10,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
 
-nltk.download('all')
+nltk.download('stopwords')
 
 st.title('Welcome to Streamlit starter application🎈')
 
