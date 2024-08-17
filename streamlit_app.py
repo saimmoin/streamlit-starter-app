@@ -10,3 +10,4 @@ with st.expander('Accordian'):
 with st.sidebar:
     st.radio("Select your gender:", ['Male', 'Female', 'Custom'])
     st.slider("Select your age:", 18, 45)
+    st.selectbox("Select your profession:", ('Data Scientist', 'Blockchain Developer', 'React Developer (Frontend)'))
