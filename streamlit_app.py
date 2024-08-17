@@ -9,3 +9,7 @@ with st.expander('Accordian'):
 
 with st.sidebar:
     st.radio("Select one:", [1, 2])
+
+bar = st.progress(50)
+time.sleep(3)
+bar.progress(100)
