@@ -99,14 +99,56 @@ st.title('Welcome to Interprep AI🎈')
 
 st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fresh Graduates to Ace Their Career Journey.**')
 
-with st.expander('Accordian'):
-  st.write('This is a text which is inside accordian.')
+# with st.expander('Accordian'):
+#   st.write('This is a text which is inside accordian.')
 
-with st.sidebar:
-    gender = st.radio("Select your gender:", ['Male', 'Female', 'Custom'])
-    age = st.slider("Select your age:", 18, 45)
-    profession = st.selectbox("Select your profession:", ('Data Scientist', 'Blockchain Developer', 'React Developer (Frontend)'))
+# with st.sidebar:
+#     gender = st.radio("Select your gender:", ['Male', 'Female', 'Custom'])
+#     age = st.slider("Select your age:", 18, 45)
+#     profession = st.selectbox("Select your profession:", ('Data Scientist', 'Blockchain Developer', 'React Developer (Frontend)'))
 
-st.write('**Gender**:', gender)
-st.write('**Age**:', age)
-st.write('**Profession**:', profession)
+# st.write('**Gender**:', gender)
+# st.write('**Age**:', age)
+# st.write('**Profession**:', profession)
+
+# api_key = 'AIzaSyBn6ErvYhOqnKlx26WhcEtNt5jTQDD2DCE'
+# cv_path = 'cv.pdf'
+# job_title = 'Data Scientist'
+# job_description = "This is a full-time on-site role for a Machine Learning Engineer at CenturionVR in Lahore. As a Machine Learning Engineer, you will be responsible for developing, implementing, and maintaining machine learning models and algorithms. You will collaborate with cross-functional teams to gather deployment information and deploy your models. You will need to train lightweight human body pose tracking models that are capable of running on mobile phones. The models will be primarily used in video game experiences made with Unity3D so while it is not required, experience with that is a plus."
+# difficulty = "MEDIUM"
+# experience_level = "5 years of experience"
+
+cv_file = st.file_uploader("Upload your CV (PDF format)", type=["pdf"])
+job_title = st.text_input("Job Title: ")
+job_description = st.text_area("Job Description", 
+    "This is a full-time on-site role for a Machine Learning Engineer at CenturionVR in Lahore. As a Machine Learning Engineer, you will be responsible for developing, implementing, and maintaining machine learning models and algorithms. You will collaborate with cross-functional teams to gather deployment information and deploy your models. You will need to train lightweight human body pose tracking models that are capable of running on mobile phones. The models will be primarily used in video game experiences made with Unity3D so while it is not required, experience with that is a plus.")
+difficulty = st.selectbox("Difficulty Level", ["EASY", "MEDIUM", "HARD"], index=1)
+experience_level = st.text_input("Experience Level", "5 years of experience")
+api_key = st.text_input("API Key", type="password")
+
+
+# cv_text = read_pdf(cv_path)
+# questions = generate_questions(cv_text, job_title, job_description, difficulty, experience_level, api_key)
+
+# if not questions or "Please provide" in questions[0]:
+#     print("Error generating questions:", questions)
+# else:
+#     # print("Generated Questions:")
+#     user_responses = []
+#     for question in questions:
+#         if question.strip():
+#             print(question)
+#             answer = input("Answer: ")
+#             print(answer)
+#             if answer:
+#                 user_responses.append(f"{question} {answer}")
+#             else:
+#                 print("No answer provided for this question.")
+
+#     if not user_responses:
+#         print("No valid answers were provided. Please provide answers to score.")
+#     else:
+#         questions_and_responses = "\n".join(user_responses)
+#         score = score_responses(cv_text, job_title, job_description, difficulty, experience_level, questions_and_responses, api_key)
+#         print("Score and Feedback:")
+#         print(score)
