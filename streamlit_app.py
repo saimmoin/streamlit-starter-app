@@ -2,9 +2,9 @@ import streamlit as st
 import PyPDF2
 import google.generativeai as genai
 
-st.title('Welcome to Streamlit starter application🎈')
+st.title('Welcome to Interprep AI🎈')
 
-st.info('**Made by: Saim Saqib**')
+st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fresh Graduates to Ace Their Career Journey.**')
 
 with st.expander('Accordian'):
   st.write('This is a text which is inside accordian.')
