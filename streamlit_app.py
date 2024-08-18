@@ -1,4 +1,6 @@
 import streamlit as st
+import PyPDF2
+import google.generativeai as genai
 
 st.title('Welcome to Streamlit starter application🎈')
 
