@@ -9,7 +9,7 @@ st.markdown("""
     html, body, [class*="css"]  {
         font-family: 'Barriecito', cursive;
     }
-    h1, p, span {
+    h1, p, span, strong {
         font-family: 'Barriecito', cursive;
     }
     </style>
