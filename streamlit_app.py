@@ -118,12 +118,11 @@ st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fres
 # difficulty = "MEDIUM"
 # experience_level = "5 years of experience"
 
-cv_file = st.file_uploader("Upload your CV (PDF format)", type=["pdf"])
+cv_file = st.file_uploader("Upload your CV (PDF format): ", type=["pdf"])
 job_title = st.text_input("Job Title: ")
-job_description = st.text_area("Job Description", 
-    "This is a full-time on-site role for a Machine Learning Engineer at CenturionVR in Lahore. As a Machine Learning Engineer, you will be responsible for developing, implementing, and maintaining machine learning models and algorithms. You will collaborate with cross-functional teams to gather deployment information and deploy your models. You will need to train lightweight human body pose tracking models that are capable of running on mobile phones. The models will be primarily used in video game experiences made with Unity3D so while it is not required, experience with that is a plus.")
+job_description = st.text_area("Job Description: ")
 difficulty = st.selectbox("Difficulty Level", ["EASY", "MEDIUM", "HARD"], index=1)
-experience_level = st.text_input("Experience Level", "5 years of experience")
+experience_level = st.text_input("Experience Level: ")
 api_key = st.text_input("API Key", type="password")
 
 
