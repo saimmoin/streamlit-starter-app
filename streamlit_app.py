@@ -9,6 +9,9 @@ st.markdown("""
     html, body, [class*="css"]  {
         font-family: 'Barriecito', cursive;
     }
+    h1 {
+        font-family: 'Barriecito', cursive;
+    }
     </style>
     """, unsafe_allow_html=True)
 
