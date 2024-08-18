@@ -15,7 +15,7 @@ import google.generativeai as genai
 def read_pdf(file):
     pdf_reader = PyPDF2.PdfReader(file)
     text = ""
-    for page_num in range(pdf_reader.getNumPages()):
+    for page_num in range(len(pdf_reader.pages)):
         page = pdf_reader.getPage(page_num)
         text += page.extract_text()
     return text
