@@ -87,10 +87,10 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Dancing+Script&display=swap');
 
     html, body, [class*="css"]  {
-        font-family: 'Barriecito', cursive;
+        font-family: monospace;
     }
     h1, p, span, strong {
-        font-family: 'Barriecito', cursive;
+        font-family: monospace;
     }
     </style>
     """, unsafe_allow_html=True)
