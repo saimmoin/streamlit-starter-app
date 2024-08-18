@@ -118,8 +118,7 @@ st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fres
 # difficulty = "MEDIUM"
 # experience_level = "5 years of experience"
 
-cv_path = "https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy9mZDc5ZGNkNmUxYWE3YzcxL0VhcnlfTy11ZTJKS2hiREtLTl9mejhzQlUtSEIxU05TWEcwb3pnbXZuZktUUVE%5FZT1kdXljUko&cid=FD79DCD6E1AA7C71&id=FD79DCD6E1AA7C71%21seffcf2aa7bae4a6285b0ca28dfdfcfcb&parId=FD79DCD6E1AA7C71%21s3af9a41129c046e5ac7bca1d93b63b8b&o=OneUp"
-cv_text = read_pdf(cv_path)
+cv_path = st.file_uploader("Upload your CV (PDF format)", type=["pdf"])
 job_title = st.text_input("Job Title: ")
 job_description = st.text_area("Job Description: ")
 difficulty = st.selectbox("Difficulty Level", ["EASY", "MEDIUM", "HARD"], index=1)
@@ -128,7 +127,8 @@ api_key = st.text_input("API Key", type="password")
 
 
 if st.button("Generate Interview Questions"):
-    if cv_text:
+    if cv_path:
+        cv_text = read_pdf(cv_path)
         questions = generate_questions(cv_text, job_title, job_description, difficulty, experience_level, api_key)
         if not questions or "Please provide" in questions[0]:
             st.error("Error generating questions:" + questions)
