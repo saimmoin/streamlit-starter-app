@@ -2,6 +2,16 @@ import streamlit as st
 import PyPDF2
 import google.generativeai as genai
 
+st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Dancing+Script&display=swap');
+
+    html, body, [class*="css"]  {
+        font-family: 'Barriecito', cursive;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 st.title('Welcome to Interprep AI🎈')
 
 st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fresh Graduates to Ace Their Career Journey.**')
