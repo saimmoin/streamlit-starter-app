@@ -1,16 +1,4 @@
 import streamlit as st
-import pandas as pd
-import re
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-import nltk
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score
-
-nltk.download('stopwords')
 
 st.title('Welcome to Streamlit starter application🎈')
 
