@@ -118,7 +118,7 @@ st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fres
 # difficulty = "MEDIUM"
 # experience_level = "5 years of experience"
 
-cv_text = st.file_uploader("Upload your CV (PDF format): ", type=["pdf"])
+cv_path = st.file_uploader("Upload your CV (PDF format): ", type=["pdf"])
 job_title = st.text_input("Job Title: ")
 job_description = st.text_area("Job Description: ")
 difficulty = st.selectbox("Difficulty Level", ["EASY", "MEDIUM", "HARD"], index=1)
