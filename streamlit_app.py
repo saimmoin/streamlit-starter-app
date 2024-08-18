@@ -88,7 +88,6 @@ st.markdown("""
 
     html, body, [class*="css"]  {
         font-family: 'Barriecito', cursive;
-        background-color: black;
     }
     h1, p, span, strong {
         font-family: 'Barriecito', cursive;
@@ -119,7 +118,7 @@ st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fres
 # difficulty = "MEDIUM"
 # experience_level = "5 years of experience"
 
-cv_file = st.file_uploader("Upload your CV (PDF format): ", type=["pdf"])
+cv_text = st.file_uploader("Upload your CV (PDF format): ", type=["pdf"])
 job_title = st.text_input("Job Title: ")
 job_description = st.text_area("Job Description: ")
 difficulty = st.selectbox("Difficulty Level", ["EASY", "MEDIUM", "HARD"], index=1)
@@ -127,28 +126,29 @@ experience_level = st.text_input("Experience Level: ")
 api_key = st.text_input("API Key", type="password")
 
 
-# cv_text = read_pdf(cv_path)
-# questions = generate_questions(cv_text, job_title, job_description, difficulty, experience_level, api_key)
+if st.button("Generate Interview Questions"):
+    if cv_text:
+        cv_text = read_pdf(cv_path)
+        questions = generate_questions(cv_text, job_title, job_description, difficulty, experience_level, api_key)
+        if not questions or "Please provide" in questions[0]:
+            st.error("Error generating questions:" + questions)
+        else:
+            # print("Generated Questions:")
+            user_responses = []
+            for question in questions:
+                if question.strip():
+                    answer = st.text_input(question + ": ")
+                    if answer:
+                        user_responses.append(f"{question} {answer}")
+                    else:
+                        st.warning("No answer provided for this question.")
 
-# if not questions or "Please provide" in questions[0]:
-#     print("Error generating questions:", questions)
-# else:
-#     # print("Generated Questions:")
-#     user_responses = []
-#     for question in questions:
-#         if question.strip():
-#             print(question)
-#             answer = input("Answer: ")
-#             print(answer)
-#             if answer:
-#                 user_responses.append(f"{question} {answer}")
-#             else:
-#                 print("No answer provided for this question.")
-
-#     if not user_responses:
-#         print("No valid answers were provided. Please provide answers to score.")
-#     else:
-#         questions_and_responses = "\n".join(user_responses)
-#         score = score_responses(cv_text, job_title, job_description, difficulty, experience_level, questions_and_responses, api_key)
-#         print("Score and Feedback:")
-#         print(score)
+            if not user_responses:
+                st.error("No valid answers were provided. Please provide answers to score.")
+            else:
+                questions_and_responses = "\n".join(user_responses)
+                score = score_responses(cv_text, job_title, job_description, difficulty, experience_level, questions_and_responses, api_key)
+                st.subheader("Score and Feedback:")
+                st.write(score)
+    else:
+        st.error("Please upload your CV file.")
