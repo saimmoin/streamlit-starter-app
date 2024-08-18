@@ -119,6 +119,7 @@ st.info('**Interprep: Your Gateway to Real-World Job Success – Empowering Fres
 # experience_level = "5 years of experience"
 
 cv_path = st.file_uploader("Upload your CV (PDF format): ", type=["pdf"])
+cv_text = read_pdf(cv_path)
 job_title = st.text_input("Job Title: ")
 job_description = st.text_area("Job Description: ")
 difficulty = st.selectbox("Difficulty Level", ["EASY", "MEDIUM", "HARD"], index=1)
@@ -128,7 +129,6 @@ api_key = st.text_input("API Key", type="password")
 
 if st.button("Generate Interview Questions"):
     if cv_text:
-        cv_text = read_pdf(cv_path)
         questions = generate_questions(cv_text, job_title, job_description, difficulty, experience_level, api_key)
         if not questions or "Please provide" in questions[0]:
             st.error("Error generating questions:" + questions)
