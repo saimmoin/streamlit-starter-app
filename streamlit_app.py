@@ -92,7 +92,7 @@ st.markdown("""
     h1, p, span, strong {
         font-family: 'Barriecito', cursive;
     }
-    .st-cr st-ck st-d9 st-da st-db st-b4 st-bt st-dc st-cs st-dd st-de st-df st-dg {
+    .st-emotion-cache-sy3zga e1gc5fo21 {
         font-family: 'Barriecito', cursive;
     }
     </style>
